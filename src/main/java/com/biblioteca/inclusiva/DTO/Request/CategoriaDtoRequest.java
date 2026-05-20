@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 @Schema(description = "Dados para criar ou atualizar uma planilha")
+
 public class CategoriaDtoRequest { //recebe dados, ele faz um put ou um post
 
     @NotBlank(message = "A mensagem é obrigatória.")
