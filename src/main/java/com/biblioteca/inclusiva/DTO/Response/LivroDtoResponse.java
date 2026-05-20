@@ -78,14 +78,6 @@ public class LivroDtoResponse {
         this.formato = formato;
     }
 
-    public List<Long> getCategoriaIds() {
-        return categoriaIds;
-    }
-
-    public void setCategoriaIds(List<Long> categoriaIds) {
-        this.categoriaIds = categoriaIds;
-    }
-
     public List<CategoriaDtoResponse> getCategorias() {
         return categorias;
     }
