@@ -2,10 +2,13 @@ package com.biblioteca.inclusiva.Service;
 import com.biblioteca.inclusiva.DTO.Request.UsuarioDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.UsuarioDtoResponse;
 import com.biblioteca.inclusiva.Domain.Usuario;
+import com.biblioteca.inclusiva.Exception.DuplicateEntryException;
+import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
 import com.biblioteca.inclusiva.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -19,6 +22,7 @@ public class UsuarioService {
         usuario.setNome(request.getNome());
         usuario.setEmail(request.getEmail());
         usuario.setTelefone(request.getTelefone());
+        usuario.setDataCadastro(LocalDate.now());
 
         return usuario;
     }
@@ -40,14 +44,13 @@ public class UsuarioService {
 
     public UsuarioDtoResponse buscarPorId(Long id){
         Usuario usuario = usuarioRepository.findById(id)
-                .orElseThrow(() -> new ResourcesNotFoundException("Usuario não encontrado."));
+                .orElseThrow(() -> new ResourceNotFoundException("Usuario não encontrado."));
 
         return toUsuarioResponse(usuario);
     }
-    
 
     public UsuarioDtoResponse criar(UsuarioDtoRequest request){
-        if(!usuarioRepository.existsByEmail(request.getEmail())){
+        if(usuarioRepository.existsByEmail(request.getEmail())){
             throw new DuplicateEntryException("Email já cadastrado.");
         }
 

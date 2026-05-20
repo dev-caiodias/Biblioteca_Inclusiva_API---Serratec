@@ -3,6 +3,7 @@ package com.biblioteca.inclusiva.Service;
 import com.biblioteca.inclusiva.DTO.Request.CategoriaDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.CategoriaDtoResponse;
 import com.biblioteca.inclusiva.Domain.Categoria;
+import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
 import com.biblioteca.inclusiva.Repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,7 @@ public class CategoriaService {
 
     public CategoriaDtoResponse buscarPorId (Long id){
         Categoria categoria = categoriaRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException ("Categoria não encontrada com id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada com id: " + id));
 
         return toCategoriaResponse(categoria);
     }
