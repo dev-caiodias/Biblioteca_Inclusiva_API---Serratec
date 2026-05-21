@@ -15,7 +15,7 @@ public class Emprestimo {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDate dataEmpresto;
+    private LocalDate dataEmprestimo;
 
     @Column(nullable = false)
     private LocalDate dataPrevistaDevolucao;
@@ -40,7 +40,7 @@ public class Emprestimo {
 
     public Emprestimo(Long id, LocalDate dataEmpresto, LocalDate dataPrevistaDevolucao, LocalDate dataDevolucao, StatusEmprestimo status, Usuario usuario, Livro livro) {
         this.id = id;
-        this.dataEmpresto = dataEmpresto;
+        this.dataEmprestimo = dataEmpresto;
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
         this.dataDevolucao = dataDevolucao;
         this.status = status;
@@ -56,12 +56,12 @@ public class Emprestimo {
         this.id = id;
     }
 
-    public LocalDate getDataEmpresto() {
-        return dataEmpresto;
+    public LocalDate getDataEmprestimo() {
+        return dataEmprestimo;
     }
 
-    public void setDataEmpresto(LocalDate dataEmpresto) {
-        this.dataEmpresto = dataEmpresto;
+    public void setDataEmprestimo(LocalDate dataEmprestimo) {
+        this.dataEmprestimo = dataEmprestimo;
     }
 
     public LocalDate getDataPrevistaDevolucao() {
