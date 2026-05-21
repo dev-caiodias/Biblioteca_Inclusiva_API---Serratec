@@ -26,13 +26,7 @@ public class PerfilService {
     }
 
     public PerfilDtoResponse toPerfilResponse(PerfilAcessibilidade perfilAcessibilidade){
-        PerfilDtoResponse response = new PerfilDtoResponse();
-        response.setId(perfilAcessibilidade.getId());
-        response.setTipoDeficiencia(perfilAcessibilidade.getTipoDeficiencia());
-        response.setFormatoPreferido(perfilAcessibilidade.getFormatoPreferido());
-        response.setObservacoes(perfilAcessibilidade.getObservacoes());
-
-        return response;
+        return new PerfilDtoResponse(perfilAcessibilidade);
     }
 
     public List <PerfilDtoResponse> listarTodos(){

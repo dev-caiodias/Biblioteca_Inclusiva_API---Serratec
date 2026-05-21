@@ -25,12 +25,7 @@ public class CategoriaService {
     }
 
     public static CategoriaDtoResponse toCategoriaResponse(Categoria categoria){
-        CategoriaDtoResponse response = new CategoriaDtoResponse();
-        response.setId(categoria.getId());
-        response.setNome(categoria.getNome());
-        response.setDescricao(categoria.getDescricao());
-
-        return response;
+        return new CategoriaDtoResponse(categoria);
     }
 
     public List <CategoriaDtoResponse> listarTodos(){

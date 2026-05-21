@@ -28,13 +28,7 @@ public class UsuarioService {
     }
 
     public UsuarioDtoResponse toUsuarioResponse(Usuario usuario){
-        UsuarioDtoResponse response = new UsuarioDtoResponse();
-        response.setId(usuario.getId());
-        response.setNome(usuario.getNome());
-        response.setEmail(usuario.getEmail());
-        response.setTelefone(usuario.getTelefone());
-
-        return response;
+        return new UsuarioDtoResponse(usuario);
     }
 
     public List <UsuarioDtoResponse> listarTodos(){
