@@ -47,4 +47,12 @@ public class UsuarioDtoRequest {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public Long getPerfilId() {
+        return perfilId;
+    }
+
+    public void setPerfilId(Long perfilId) {
+        this.perfilId = perfilId;
+    }
 }

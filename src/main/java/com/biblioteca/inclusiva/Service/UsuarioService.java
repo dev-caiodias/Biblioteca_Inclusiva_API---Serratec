@@ -1,9 +1,11 @@
 package com.biblioteca.inclusiva.Service;
 import com.biblioteca.inclusiva.DTO.Request.UsuarioDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.UsuarioDtoResponse;
+import com.biblioteca.inclusiva.Domain.Entidades.PerfilAcessibilidade;
 import com.biblioteca.inclusiva.Domain.Entidades.Usuario;
 import com.biblioteca.inclusiva.Exception.DuplicateEntryException;
 import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
+import com.biblioteca.inclusiva.Repository.PerfilRepository;
 import com.biblioteca.inclusiva.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,8 @@ public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+    @Autowired
+    private PerfilRepository perfilRepository;
 
     public  Usuario toUsuario (UsuarioDtoRequest request){
         Usuario usuario = new Usuario();
@@ -23,6 +27,12 @@ public class UsuarioService {
         usuario.setEmail(request.getEmail());
         usuario.setTelefone(request.getTelefone());
         usuario.setDataCadastro(LocalDate.now());
+
+        if (request.getPerfilId() != null) {
+            PerfilAcessibilidade perfil = perfilRepository.findById(request.getPerfilId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Perfil não encontrado"));
+            usuario.setPerfilAcessibilidade(perfil);
+        }
 
         return usuario;
     }

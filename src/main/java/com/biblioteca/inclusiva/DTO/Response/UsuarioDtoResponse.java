@@ -25,10 +25,20 @@ public class UsuarioDtoResponse {
     public UsuarioDtoResponse( Usuario u){
         this.id = u.getId();
         this.nome = u.getNome();
+        this.email = u.getEmail();
         this.telefone = u.getTelefone();
         this.createdAt = u.getCreatedAt();
         this.updatedAt = u.getUpdatedAt();
-    }
+
+        if (u.getPerfilAcessibilidade() != null) {
+            PerfilDtoResponse perfilResponse = new PerfilDtoResponse();
+            perfilResponse.setId(u.getPerfilAcessibilidade().getId());
+            perfilResponse.setTipoDeficiencia(u.getPerfilAcessibilidade().getTipoDeficiencia());
+            perfilResponse.setFormatoPreferido(u.getPerfilAcessibilidade().getFormatoPreferido());
+            perfilResponse.setObservacoes(u.getPerfilAcessibilidade().getObservacoes());
+            this.perfilAcessibilidade = perfilResponse;
+        } // tive um problema nos testes no postman.A saida do json estava com Email NULL e perfilAcessibilidade NULL.
+    }// esse if converte perfilAcessibilidade em uma entidade DTO para facilitar na hora de instanciar lá no UsuarioService
 
     public Long getId() {
         return id;
