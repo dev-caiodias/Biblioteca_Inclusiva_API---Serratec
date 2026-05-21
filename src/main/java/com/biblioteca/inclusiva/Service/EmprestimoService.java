@@ -58,7 +58,7 @@ public class EmprestimoService {
         return emprestimo.stream().map(this :: toEmprestimoResponse).toList();
     }
 
-    public EmprestimoDtoResponse criar (EmprestimoDtoRequest request){
+    public EmprestimoDtoResponse criar (EmprestimoDtoRequest request){  // cria um emprestimo de um livro
         Emprestimo emprestimo = toEmprestimo(request);
         int ativos = emprestimoRepository.countByUsuarioIdAndStatus(request.getUsuarioId(), StatusEmprestimo.ATIVO);
 
@@ -77,11 +77,23 @@ public class EmprestimoService {
         return toEmprestimoResponse(emprestimoRepository.save(emprestimo));
     }
 
-    public EmprestimoDtoResponse atualizar(Long id, EmprestimoDtoRequest request){
+    public EmprestimoDtoResponse devolver (Long id){
         Emprestimo emprestimo = emprestimoRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Livro não encontrado"));
 
-        emprestimo.setDataDevolucao(request.get);
+        emprestimo.setDataDevolucao(LocalDate.now());
+        emprestimo.setStatus(StatusEmprestimo.DEVOLVIDO);
+
+        Livro livro = emprestimo.getLivro();
+        livro.setQtdExemplares(livro.getQtdExemplares() + 1);
+        livroRepository.save(livro);
+
+        return toEmprestimoResponse(emprestimoRepository.save(emprestimo));
     }
 
+    public void deletar(Long id){
+        Emprestimo emprestimo = emprestimoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Emprestimo não encontrado."));
+        emprestimoRepository.deleteById(id);
+    }
 }
