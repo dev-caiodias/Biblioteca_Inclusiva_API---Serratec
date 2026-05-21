@@ -1,14 +1,18 @@
 package com.biblioteca.inclusiva.DTO.Response;
 
 import com.biblioteca.inclusiva.Domain.Entidades.PerfilAcessibilidade;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDateTime;
 
 public class PerfilDtoResponse {
-
+    @Schema(description = "ID do perfil de acessibilidade")
     private Long id;
+    @Schema(description = "Tipo de deficiencia")
     private String tipoDeficiencia;
+    @Schema(description = "Formato preferido de livro para cada deficiencia ou necessidade")
     private String formatoPreferido;
+    @Schema(description = "Observações específicas")
     private String observacoes;
 
     private LocalDateTime createdAt;

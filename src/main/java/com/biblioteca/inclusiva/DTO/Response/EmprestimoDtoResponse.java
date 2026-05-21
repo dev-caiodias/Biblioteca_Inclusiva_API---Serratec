@@ -2,6 +2,7 @@ package com.biblioteca.inclusiva.DTO.Response;
 
 import com.biblioteca.inclusiva.Domain.Entidades.Emprestimo;
 import com.biblioteca.inclusiva.Domain.Enums.StatusEmprestimo;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -9,11 +10,17 @@ import java.time.LocalDateTime;
 public class EmprestimoDtoResponse {
 
     private Long id;
+    @Schema(description = "status de emprestimo", example = "DEVOLVIDO")
     private StatusEmprestimo status;
+    @Schema(description = "Nome do usuário", example = "Caio")
     private String usuarioNome;
+    @Schema(description = "Titulo do livro", example = "1984")
     private String livroTitulo;
+    @Schema(description = "Data para devolução" )
     private LocalDate dataPrevistaDevolucao;
+    @Schema(description = "Data em que o livro foi devolvido")
     private LocalDate dataDevolucao;
+    @Schema(description = "")
     private LocalDate dataEmprestimo;
 
     private LocalDateTime createdAt;

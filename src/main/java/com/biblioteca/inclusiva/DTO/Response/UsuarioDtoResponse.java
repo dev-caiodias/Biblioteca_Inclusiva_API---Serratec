@@ -1,14 +1,19 @@
 package com.biblioteca.inclusiva.DTO.Response;
 import com.biblioteca.inclusiva.Domain.Entidades.Usuario;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDateTime;
 
 public class UsuarioDtoResponse {
-
+    @Schema(description = "ID do usuário")
     private Long id;
+    @Schema(description = "Nome do usuario")
     private String nome;
+    @Schema(description = "Telefone do usuario")
     private String telefone;
+    @Schema(description = "Email do usuario")
     private String email;
+    @Schema(description = "Qual tipo de perfil de acessibilidade o usuario se encaixa")
     private PerfilDtoResponse perfilAcessibilidade;
 
     private LocalDateTime createdAt;

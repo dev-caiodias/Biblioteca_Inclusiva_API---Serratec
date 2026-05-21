@@ -4,17 +4,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-@Schema(description = "Dados para criar ou atualizar uma planilha")
-
 public class CategoriaDtoRequest { //recebe dados, ele faz um put ou um post
 
     @NotBlank(message = "A mensagem é obrigatória.")
     @Size(max = 100, message = "O nome deve ter no máximo 100 caracteres.")
-    @Schema(description = "Nome da categoria")
+    @Schema(description = "Nome da categoria", example = "João" )
     private String nome;
-
     @Size(max = 200, message = "A descrição deve ter no máximo 200 caracteres.")
-    @Schema(description = "Descrição da categoria")
+    @Schema(description = "Descrição da categoria", example = "Audiobook")
     private String descricao;
 
     public String getNome() {

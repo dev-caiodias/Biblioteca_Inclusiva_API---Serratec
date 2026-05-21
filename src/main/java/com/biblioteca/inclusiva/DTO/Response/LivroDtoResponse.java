@@ -1,19 +1,25 @@
 package com.biblioteca.inclusiva.DTO.Response;
 
 import com.biblioteca.inclusiva.Domain.Entidades.Livro;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class LivroDtoResponse {
-
+    @Schema(description = "ID do livro")
     private Long id;
+    @Schema(description = "Titulo do livro")
     private String titulo;
+    @Schema(description = "Autor do livro")
     private String autor;
+    @Schema(description = "International Standard Book Number")
     private String isbn;
+    @Schema(description = "Quantidade de livros no banco de dados")
     private int qtdExemplares;
-
+    @Schema(description = "Formato de livros")
     private String formato;
+    @Schema(description = "Lista de categorias de livros")
     private List<CategoriaDtoResponse> categorias;
 
     private LocalDateTime createdAt;
