@@ -14,9 +14,6 @@ public class EmprestimoDtoRequest {
     private Long livroId;
     @Future
     private LocalDate dataPrevistaDevolucao;
-
-    private
-
     public EmprestimoDtoRequest() {
     }
 
