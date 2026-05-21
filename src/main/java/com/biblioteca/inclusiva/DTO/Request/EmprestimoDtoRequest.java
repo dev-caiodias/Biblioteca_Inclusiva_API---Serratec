@@ -15,6 +15,8 @@ public class EmprestimoDtoRequest {
     @Future
     private LocalDate dataPrevistaDevolucao;
 
+    private
+
     public EmprestimoDtoRequest() {
     }
 

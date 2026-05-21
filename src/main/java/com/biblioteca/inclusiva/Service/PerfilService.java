@@ -2,7 +2,7 @@ package com.biblioteca.inclusiva.Service;
 
 import com.biblioteca.inclusiva.DTO.Request.PerfilDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.PerfilDtoResponse;
-import com.biblioteca.inclusiva.Domain.PerfilAcessibilidade;
+import com.biblioteca.inclusiva.Domain.Entidades.PerfilAcessibilidade;
 import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
 import com.biblioteca.inclusiva.Repository.PerfilRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,9 @@
 package com.biblioteca.inclusiva.DTO.Response;
 
+import com.biblioteca.inclusiva.Domain.Entidades.PerfilAcessibilidade;
+
+import java.time.LocalDateTime;
+
 public class PerfilDtoResponse {
 
     private Long id;
@@ -7,10 +11,20 @@ public class PerfilDtoResponse {
     private String formatoPreferido;
     private String observacoes;
 
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
     public PerfilDtoResponse() {
     }
 
-
+    public PerfilDtoResponse (PerfilAcessibilidade p){
+        this.id = p.getId();
+        this.tipoDeficiencia = p.getTipoDeficiencia();
+        this.formatoPreferido = p.getFormatoPreferido();
+        this.observacoes = p.getObservacoes();
+        this.createdAt = p.getCreatedAt();
+        this.updatedAt = p.getUpdatedAt();
+    }
 
     public Long getId() {
         return id;

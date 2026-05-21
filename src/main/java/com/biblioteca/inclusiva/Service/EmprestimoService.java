@@ -3,10 +3,10 @@ package com.biblioteca.inclusiva.Service;
 
 import com.biblioteca.inclusiva.DTO.Request.EmprestimoDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.EmprestimoDtoResponse;
-import com.biblioteca.inclusiva.Domain.Emprestimo;
+import com.biblioteca.inclusiva.Domain.Entidades.Emprestimo;
 import com.biblioteca.inclusiva.Domain.Enums.StatusEmprestimo;
-import com.biblioteca.inclusiva.Domain.Livro;
-import com.biblioteca.inclusiva.Domain.Usuario;
+import com.biblioteca.inclusiva.Domain.Entidades.Livro;
+import com.biblioteca.inclusiva.Domain.Entidades.Usuario;
 import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
 import com.biblioteca.inclusiva.Repository.EmprestimoRepository;
 import com.biblioteca.inclusiva.Repository.LivroRepository;

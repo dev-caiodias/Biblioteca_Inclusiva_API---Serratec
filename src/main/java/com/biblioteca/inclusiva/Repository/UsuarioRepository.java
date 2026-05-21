@@ -1,6 +1,6 @@
 package com.biblioteca.inclusiva.Repository;
 
-import com.biblioteca.inclusiva.Domain.Usuario;
+import com.biblioteca.inclusiva.Domain.Entidades.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

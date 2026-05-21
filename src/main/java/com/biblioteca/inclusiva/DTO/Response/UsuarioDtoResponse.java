@@ -1,5 +1,7 @@
 package com.biblioteca.inclusiva.DTO.Response;
-import com.biblioteca.inclusiva.Domain.Usuario;
+import com.biblioteca.inclusiva.Domain.Entidades.Usuario;
+
+import java.time.LocalDateTime;
 
 public class UsuarioDtoResponse {
 
@@ -9,6 +11,9 @@ public class UsuarioDtoResponse {
     private String email;
     private PerfilDtoResponse perfilAcessibilidade;
 
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
     public UsuarioDtoResponse() {
     }
 
@@ -16,6 +21,8 @@ public class UsuarioDtoResponse {
         this.id = u.getId();
         this.nome = u.getNome();
         this.telefone = u.getTelefone();
+        this.createdAt = u.getCreatedAt();
+        this.updatedAt = u.getUpdatedAt();
     }
 
     public Long getId() {

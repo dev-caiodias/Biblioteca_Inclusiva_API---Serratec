@@ -1,7 +1,9 @@
 package com.biblioteca.inclusiva.DTO.Response;
 
-import com.biblioteca.inclusiva.Domain.Categoria;
+import com.biblioteca.inclusiva.Domain.Entidades.Categoria;
 import io.swagger.v3.oas.annotations.media.Schema;
+
+import java.time.LocalDateTime;
 
 public class CategoriaDtoResponse { // é o objeto que VOLTA para o cliente
     @Schema(description = "ID da categoria")
@@ -13,6 +15,9 @@ public class CategoriaDtoResponse { // é o objeto que VOLTA para o cliente
     @Schema(description = "Descrição da categoria")
     private String descricao;
 
+    private LocalDateTime createAt;
+    private LocalDateTime updatedAt;
+
     public CategoriaDtoResponse() {
     }
 
@@ -20,6 +25,8 @@ public class CategoriaDtoResponse { // é o objeto que VOLTA para o cliente
         this.id = c.getId();
         this.nome = c.getNome();
         this.descricao = c.getDescricao();
+        this.createAt = c.getCreatedAt();
+        this.updatedAt = c.getUpdatedAt();
     }
 
     public Long getId() {
@@ -45,4 +52,5 @@ public class CategoriaDtoResponse { // é o objeto que VOLTA para o cliente
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
 }

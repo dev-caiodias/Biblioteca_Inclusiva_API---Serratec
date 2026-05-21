@@ -2,8 +2,8 @@ package com.biblioteca.inclusiva.Service;
 
 import com.biblioteca.inclusiva.DTO.Request.LivroDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.LivroDtoResponse;
-import com.biblioteca.inclusiva.Domain.Categoria;
-import com.biblioteca.inclusiva.Domain.Livro;
+import com.biblioteca.inclusiva.Domain.Entidades.Categoria;
+import com.biblioteca.inclusiva.Domain.Entidades.Livro;
 import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
 import com.biblioteca.inclusiva.Repository.CategoriaRepository;
 import com.biblioteca.inclusiva.Repository.LivroRepository;

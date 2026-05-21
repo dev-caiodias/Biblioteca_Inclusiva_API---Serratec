@@ -1,11 +1,12 @@
-package com.biblioteca.inclusiva.Domain;
+package com.biblioteca.inclusiva.Domain.Entidades;
 
+import com.biblioteca.inclusiva.Domain.AuditableEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "perfis_acessibilidade")
-public class PerfilAcessibilidade {
+public class PerfilAcessibilidade extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

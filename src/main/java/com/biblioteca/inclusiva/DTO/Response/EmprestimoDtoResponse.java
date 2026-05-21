@@ -1,9 +1,10 @@
 package com.biblioteca.inclusiva.DTO.Response;
 
-import com.biblioteca.inclusiva.Domain.Emprestimo;
+import com.biblioteca.inclusiva.Domain.Entidades.Emprestimo;
 import com.biblioteca.inclusiva.Domain.Enums.StatusEmprestimo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class EmprestimoDtoResponse {
 
@@ -14,6 +15,9 @@ public class EmprestimoDtoResponse {
     private LocalDate dataPrevistaDevolucao;
     private LocalDate dataDevolucao;
     private LocalDate dataEmprestimo;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public EmprestimoDtoResponse() {
     }
@@ -26,6 +30,8 @@ public class EmprestimoDtoResponse {
         this.dataEmprestimo = e.getDataEmprestimo();
         this.dataPrevistaDevolucao = e.getDataPrevistaDevolucao();
         this.dataDevolucao = e.getDataDevolucao();
+        this.createdAt = e.getCreatedAt();
+        this.updatedAt = e.getUpdatedAt();
     }
 
     public Long getId() {

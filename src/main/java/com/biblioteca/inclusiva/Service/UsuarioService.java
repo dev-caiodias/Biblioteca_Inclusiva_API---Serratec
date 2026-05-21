@@ -1,7 +1,7 @@
 package com.biblioteca.inclusiva.Service;
 import com.biblioteca.inclusiva.DTO.Request.UsuarioDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.UsuarioDtoResponse;
-import com.biblioteca.inclusiva.Domain.Usuario;
+import com.biblioteca.inclusiva.Domain.Entidades.Usuario;
 import com.biblioteca.inclusiva.Exception.DuplicateEntryException;
 import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
 import com.biblioteca.inclusiva.Repository.UsuarioRepository;

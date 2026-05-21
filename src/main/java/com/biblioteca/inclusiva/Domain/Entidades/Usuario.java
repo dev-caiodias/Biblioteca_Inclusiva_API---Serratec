@@ -1,5 +1,6 @@
-package com.biblioteca.inclusiva.Domain;
+package com.biblioteca.inclusiva.Domain.Entidades;
 
+import com.biblioteca.inclusiva.Domain.AuditableEntity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+public class Usuario extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

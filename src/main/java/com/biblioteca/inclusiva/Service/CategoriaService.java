@@ -2,7 +2,7 @@ package com.biblioteca.inclusiva.Service;
 
 import com.biblioteca.inclusiva.DTO.Request.CategoriaDtoRequest;
 import com.biblioteca.inclusiva.DTO.Response.CategoriaDtoResponse;
-import com.biblioteca.inclusiva.Domain.Categoria;
+import com.biblioteca.inclusiva.Domain.Entidades.Categoria;
 import com.biblioteca.inclusiva.Exception.ResourceNotFoundException;
 import com.biblioteca.inclusiva.Repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;

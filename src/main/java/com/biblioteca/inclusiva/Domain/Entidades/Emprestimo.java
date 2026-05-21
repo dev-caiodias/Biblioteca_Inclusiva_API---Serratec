@@ -1,5 +1,6 @@
-package com.biblioteca.inclusiva.Domain;
+package com.biblioteca.inclusiva.Domain.Entidades;
 
+import com.biblioteca.inclusiva.Domain.AuditableEntity;
 import com.biblioteca.inclusiva.Domain.Enums.StatusEmprestimo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -8,7 +9,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "emprestimos")
-public class Emprestimo {
+public class Emprestimo extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

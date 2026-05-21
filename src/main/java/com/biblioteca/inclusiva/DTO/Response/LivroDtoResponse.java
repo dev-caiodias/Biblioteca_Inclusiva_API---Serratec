@@ -1,7 +1,8 @@
 package com.biblioteca.inclusiva.DTO.Response;
 
-import com.biblioteca.inclusiva.Domain.Livro;
+import com.biblioteca.inclusiva.Domain.Entidades.Livro;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class LivroDtoResponse {
@@ -14,6 +15,9 @@ public class LivroDtoResponse {
 
     private String formato;
     private List<CategoriaDtoResponse> categorias;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public LivroDtoResponse() {
     }
@@ -28,6 +32,8 @@ public class LivroDtoResponse {
         this.categorias = l.getCategorias()
                 .stream().map(categorias -> new CategoriaDtoResponse(categorias))
                 .toList();
+        this.createdAt = l.getCreatedAt();
+        this.updatedAt = l.getUpdatedAt();
     }
 
     public Long getId() {
