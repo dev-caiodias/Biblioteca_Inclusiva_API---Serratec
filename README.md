@@ -430,7 +430,6 @@ Todos os endpoints estão documentados com:
 
 ---
 
-**Status:** ✅ **CONCLUÍDO**  
 **Data de Conclusão:** 22/05/2026  
 **Desenvolvedor:** Caio Vinicius Dias  
 **Instituição:** Serratec - SENAI
