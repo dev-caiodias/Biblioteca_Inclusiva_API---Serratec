@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class LivroService {
@@ -81,7 +82,7 @@ public class LivroService {
                 .stream()
                 .map(catId -> categoriaRepository.findById(catId)
                         .orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada.")))
-                .toList();
+                .collect(Collectors.toList()); // estava dando um erro interno pois o hibernate não conseguia fazer alterações. Só o toList() retornava uma lista imutável
         livro.setCategorias(categorias);
 
         return toLivroResponse(livroRepository.save(livro));

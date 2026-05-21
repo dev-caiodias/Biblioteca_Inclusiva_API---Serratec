@@ -38,9 +38,9 @@ public class Emprestimo {
     public Emprestimo() {
     }
 
-    public Emprestimo(Long id, LocalDate dataEmpresto, LocalDate dataPrevistaDevolucao, LocalDate dataDevolucao, StatusEmprestimo status, Usuario usuario, Livro livro) {
+    public Emprestimo(Long id, LocalDate dataEmprestimo, LocalDate dataPrevistaDevolucao, LocalDate dataDevolucao, StatusEmprestimo status, Usuario usuario, Livro livro) {
         this.id = id;
-        this.dataEmprestimo = dataEmpresto;
+        this.dataEmprestimo = dataEmprestimo;
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
         this.dataDevolucao = dataDevolucao;
         this.status = status;
